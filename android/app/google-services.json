@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "543545532108",
+    "project_id": "upes-go",
+    "storage_bucket": "upes-go.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543545532108:android:67ed108abd63ca2dad2c69",
+        "android_client_info": {
+          "package_name": "com.example.upes_go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA30rqbnOplVxNBpwzw1_x3VqClP0V8c44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
