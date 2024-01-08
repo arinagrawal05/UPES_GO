@@ -7,7 +7,7 @@ class ThemeProvider extends ChangeNotifier {
   Color mainColor = const Color.fromRGBO(44, 43, 49, 1);
   Color accentColor = const Color(0xFF0065FF);
 
-  ThemeMode themeMode = ThemeMode.light;
+  ThemeMode themeMode = ThemeMode.dark;
 
   bool get isDarkMode {
     if (themeMode == ThemeMode.system) {

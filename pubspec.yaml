@@ -80,7 +80,9 @@ dependencies:
   flutter_text_form_field:
   hive_flutter:
   hive:
+  cached_network_image: 
   simple_animation_progress_bar:
+  # flutter_quill: ^7.3.2
 
 
  

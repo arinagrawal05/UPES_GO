@@ -23,7 +23,7 @@ class _HostelFeaturesState extends State<HostelFeatures> {
       children: [
         Container(
           color: Colors.black87,
-          height: 350,
+          // height: 350,
           width: double.infinity,
           padding: EdgeInsets.all(20),
           child: Column(

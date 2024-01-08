@@ -55,6 +55,7 @@ class MyApp extends StatelessWidget {
               initialRoute: "/",
               title: 'UPES GO',
               // key: Get.key,
+              color: themeProvider.mainColor,
               themeMode: themeProvider.themeMode,
               theme: MyThemes.lightTheme,
               darkTheme: MyThemes.darkTheme,

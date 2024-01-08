@@ -20,6 +20,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 import 'package:share/share.dart';
 import 'package:upes_go/Shared/functions.dart';
+import 'package:upes_go/notification_home.dart';
 import '../Shared/colors.dart';
 import '../Shared/style.dart';
 import '../components/bottom_nav.dart';
@@ -102,7 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                         ),
                         GestureDetector(
                           onTap: () {
-                            // navigateslide(noti(), context);
+                            navigateslide(NotificationScreen(), context);
                           },
                           child: Icon(
                             Ionicons.notifications_outline,
@@ -167,6 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             // indicator: indicatord(),
             // indicatorPadding: EdgeInsets.symmetric(horizontal: 10),
             indicatorWeight: 1,
+            dividerHeight: 0,
             tabs: [
               customTab("Products", Ionicons.pricetag_outline),
               customTab("Events", Ionicons.sparkles_outline),

@@ -18,7 +18,7 @@ class _NoticeSliderWidgetState extends State<NoticeSliderWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 170,
+        height: 185,
         width: MediaQuery.of(context).size.width,
         child: StreamBuilder(
             stream: FirebaseFirestore.instance
@@ -59,7 +59,7 @@ class _NoticeSliderWidgetState extends State<NoticeSliderWidget> {
 
 Widget noticecard(NoticeModel model, BuildContext context) {
   return Container(
-      height: 121,
+      // height: 121,
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),

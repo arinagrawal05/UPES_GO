@@ -15,6 +15,7 @@ import 'package:upes_go/Resell/enter_resell.dart';
 import 'package:upes_go/Resell/resell_home.dart';
 import 'package:upes_go/models/event_model.dart';
 import 'package:upes_go/provider/user_provider.dart';
+import 'package:upes_go/quill.dart';
 import 'Boarding/walk.dart';
 import 'components/components.dart';
 import 'components/event_card.dart';
@@ -91,12 +92,6 @@ class _HomepagescreenState extends State<Homepagescreen> {
                               navigateslide(EventHomeScreen(), context);
                             }),
                             slidelogo(Ionicons.id_card, "Faculty", () {
-                              navigateslide(Walkthough(), context);
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) =>
-                              //             FacultyDepartmentscreen()));
                               AppUtils.showSnackMessage(
                                 "This Feature is not Released Yet",
                               );
@@ -112,11 +107,16 @@ class _HomepagescreenState extends State<Homepagescreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             slidelogo(Ionicons.school, "About\nCollege", () {
-                              navigateslide(Faqscreen(), context);
+                              AppUtils.showSnackMessage(
+                                "This Feature is not Released Yet",
+                              );
                             }),
                             slidelogo(Ionicons.medal_outline, "Clubs & Society",
                                 () {
                               navigateslide(Faqscreen(), context);
+                              // AppUtils.showSnackMessage(
+                              //   "This Feature is not Released Yet",
+                              // );
                             }),
                             slidelogo(Ionicons.paw, "Lost & found", () {
                               navigateslide(LostHome(), context);

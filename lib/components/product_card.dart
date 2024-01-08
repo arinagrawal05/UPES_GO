@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:upes_go/Hive/Hive_models/commission_models/resell_hive_model.dart';
 import 'package:upes_go/components/components.dart';
 
+import '../Event/events_banner_page.dart';
 import '../Hive/Hive_helpers/resell_hive_helper.dart';
 import '../Shared/functions.dart';
 import '../Shared/style.dart';
@@ -28,14 +30,23 @@ Widget producttile(
         // width: 343,
         child: Row(
           children: [
-            Container(
-              height: 120,
-              width: 90,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(25),
-                child: Image.network(
-                  model.productImg,
-                  fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                navigateslide(
+                    FullScreenBannerPage(
+                        bannerUrl: model.productImg, name: model.productName),
+                    Get.context!);
+              },
+              child: Container(
+                height: 120,
+                width: 90,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25),
+                  child: cachedImage(model.productImg),
+                  // Image.network(
+                  //   model.productImg,
+                  //   fit: BoxFit.cover,
+                  // ),
                 ),
               ),
             ),
@@ -45,14 +56,17 @@ Widget producttile(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    // width: 236,
+                    width: MediaQuery.of(context).size.width - 150,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          child: Text(
-                            model.productName,
-                            style: GoogleFonts.montserrat(fontSize: 16),
+                        Expanded(
+                          child: Container(
+                            child: Text(
+                              model.productName,
+                              overflow: TextOverflow.ellipsis,
+                              style: GoogleFonts.montserrat(fontSize: 16),
+                            ),
                           ),
                         ),
                         // Spacer(),

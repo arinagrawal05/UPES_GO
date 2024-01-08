@@ -159,19 +159,21 @@ class _EnterOtpPageState extends State<EnterOtpPage> {
         // checking whether user exists in the db
         ap.checkExistingUser().then(
           (value) async {
-            if (value == true) {
-              // user exists in our app
-              ap.getDataFromFirestore().then(
-                    (value) => ap.setSignIn().then(
-                      (value) {
-                        navigateslide(Bottomnavbar(index: 0), context);
-                      },
-                    ),
-                  );
-            } else {
-              // new user
-              Get.toNamed(RouteConstants.referral);
-            }
+            // if (value == true) {
+            //   // user exists in our app
+            //   ap.getDataFromFirestore().then(
+            //         (value) => ap.setSignIn().then(
+            //           (value) {
+
+            navigateslide(Bottomnavbar(index: 0), context);
+
+            //     },
+            //   ),
+            // );
+            // } else {
+            //   // new user
+            //   Get.toNamed(RouteConstants.referral);
+            // }
           },
         );
       },

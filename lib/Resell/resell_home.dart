@@ -32,7 +32,6 @@ class _ResellhomescreenState extends State<Resellhomescreen> {
     data.addAll(TermConsts.resellCate);
     return GetBuilder<ResellSearchController>(
         init: ResellSearchController(isPending: true),
-        // tag: '${widget.type}ForPendingCommission',
         builder: (controller) {
           return Scaffold(
               appBar: AppBar(
@@ -91,7 +90,6 @@ class _ResellhomescreenState extends State<Resellhomescreen> {
                   tabBuilder: (context, index) => resultTab(index, controller),
                   pageBuilder: (context, index) {
                     return ListView.builder(
-                        // controller: scrollController,
                         keyboardDismissBehavior:
                             ScrollViewKeyboardDismissBehavior.onDrag,
                         // shrinkWrap: true,

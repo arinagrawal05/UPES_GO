@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_selector/widget/flutter_single_select.dart';
@@ -9,6 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:upes_go/Settings/reward_details.dart';
 import 'package:upes_go/Shared/const.dart';
 import 'package:upes_go/Shared/functions.dart';
+import 'package:upes_go/components/static_widgets.dart';
 
 import '../Shared/colors.dart';
 import '../Shared/style.dart';
@@ -56,9 +58,9 @@ Widget slidelogo(IconData icon, String name, Function() onpressIcon,
   return GestureDetector(
     onTap: onpressIcon,
     child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 6),
+      margin: EdgeInsets.symmetric(horizontal: 6, vertical: 9),
       // color: Colors.amber,
-      height: 106,
+      // height: 106,
       width: 70,
       child: Column(
         children: [
@@ -389,5 +391,22 @@ Widget customTextField(TextEditingController controller, String hintText,
               : Colors.transparent),
       hint: hintText,
     ),
+  );
+}
+
+Widget cachedImage(String companyImg) {
+  return CachedNetworkImage(
+    imageUrl: companyImg,
+    imageBuilder: (context, imageProvider) => Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: imageProvider,
+          fit: BoxFit.cover,
+          // colorFilter: ColorFilter.mode(Colors.red, BlendMode.colorBurn)
+        ),
+      ),
+    ),
+    placeholder: (context, url) => customCircularLoader(""),
+    errorWidget: (context, url, error) => const Icon(Icons.error),
   );
 }

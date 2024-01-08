@@ -3,12 +3,13 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NoticeModel {
-  String heading, content;
+  String heading, content, id;
   bool isActive;
   Timestamp timestamp;
   NoticeModel({
     required this.heading,
     required this.content,
+    required this.id,
     required this.isActive,
     required this.timestamp,
   });
@@ -17,6 +18,7 @@ class NoticeModel {
     return {
       "heading": heading,
       "content": content,
+      "id": id,
       "isActive": isActive,
       "timestamp": timestamp,
     };
@@ -28,6 +30,7 @@ class NoticeModel {
     return NoticeModel(
       heading: map['heading'] ?? "NA",
       content: map['content'] ?? "NA",
+      id: map['id'] ?? "NA",
       isActive: map['isActive'] ?? true,
       timestamp: map['timestamp'] ?? DateTime.now(),
     );

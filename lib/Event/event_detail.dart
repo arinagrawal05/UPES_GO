@@ -441,8 +441,8 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                               fontSize: 16,
                               color: Colors.grey)),
                     ),
-                    widget.event.attendeesProfile
-                            .contains(provider.userModel.photoUrl)
+                    provider.userModel.enrolledList
+                            .contains(widget.event.eventId)
                         ? Center(
                             child: dottedNotice(" You are Already Enrolled"),
                           )
@@ -890,7 +890,7 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
     return Container(
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.only(top: 7),
-      height: 50,
+      height: 54,
       // width: 252,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
